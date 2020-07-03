@@ -16,9 +16,8 @@
     <video-list :video-list="videoList"></video-list>
   </div>
 
-  
-  <script>
 
+  <script>
     Vue.component('video-list', {
       props: ['videoList'],
       template: `
@@ -31,7 +30,7 @@
       `
     })
 
-   
+
 
     Vue.component('video-item', {
       props: ['poster', 'play', 'rank', 'title'],
@@ -54,14 +53,14 @@
       data: {
         videoList: [],
       },
-      created () {
-        axios.get('https://developer.duyiedu.com/vue/bz/video', {
+      created() {
+        axios.get("https://developer.duyiedu.com/vue/bz/video", {
           params: {
             start: 0,
             offset: 12
           }
         }).then(res => {
-          this.videoList = res.data.data
+          this.videoList = res.data.data;
         })
       },
     })
